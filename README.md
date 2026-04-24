@@ -12,7 +12,9 @@ Afin d’extraire les features texte, il sera nécessaire de mettre en œuvre :
  - deux approches de type “bag-of-words”, comptage simple de mots et Tf-idf ;
  - une approche de type word/sentence embedding classique avec Word2Vec (ou Glove ou FastText) ;
  - une approche de type word/sentence embedding avec BERT ;
- - une approche de type word/sentence embedding avec USE (Universal Sentence Encoder). 
+ - une approche de type word/sentence embedding avec USE (Universal Sentence Encoder).
+ - un algorithme de type SIFT / ORB / SURF
+ - un algorithme de type CNN Transfer Learning.
  
  ------------------------
  Données 
