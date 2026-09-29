@@ -1,31 +1,66 @@
-Vous êtes Data Scientist au sein de l’entreprise "Place de marché”, qui souhaite lancer une marketplace e-commerce.
+# 🛍️ Classification d'articles e-commerce — Texte & Image
 
-------------
-Mission :
-------------
-Réaliser une première étude de faisabilité d'un moteur de classification d'articles,
-basé sur une image et une description,
-pour l'automatisation de l'attribution de la catégorie de l'article.
+> Étude de faisabilité d'un moteur de classification automatique d'articles, combinant traitement du langage naturel et vision par ordinateur.
 
-**Contraintes :**
-Afin d’extraire les features texte, il sera nécessaire de mettre en œuvre : 
- - deux approches de type “bag-of-words”, comptage simple de mots et Tf-idf ;
- - une approche de type word/sentence embedding classique avec Word2Vec (ou Glove ou FastText) ;
- - une approche de type word/sentence embedding avec BERT ;
- - une approche de type word/sentence embedding avec USE (Universal Sentence Encoder).
- - un algorithme de type SIFT / ORB / SURF
- - un algorithme de type CNN Transfer Learning.
- 
- ------------------------
- Données 
- ------------------------
-https://s3-eu-west-1.amazonaws.com/static.oc-static.com/prod/courses/files/Parcours_data_scientist/Projet+-+Textimage+DAS+V2/Dataset+projet+pre%CC%81traitement+textes+images.zip
+---
 
--------------------------
-Compétences évaluées 
--------------------------
-  * Mettre en œuvre des techniques de réduction de dimension
-  * Représenter graphiquement des données à grandes dimensions
-  * Prétraiter des données image pour obtenir un jeu de données exploitable
-  * Prétraiter des données texte pour obtenir un jeu de données exploitable
-  
+## 🎯 Contexte
+
+Dans le cadre du lancement d'une marketplace e-commerce, ce projet explore la faisabilité d'un système capable d'**attribuer automatiquement une catégorie** à un article à partir de sa description textuelle et de son image — pour éviter la saisie manuelle et garantir une classification cohérente.
+
+---
+
+## ⚙️ Ce que fait le projet
+
+Comparaison de plusieurs approches d'extraction de features, texte et image, pour évaluer laquelle offre la meilleure séparabilité des catégories.
+
+### 📝 Features texte
+
+| Approche | Méthode |
+|----------|---------|
+| Bag-of-words | Comptage simple + TF-IDF |
+| Word embedding classique | Word2Vec / FastText |
+| Sentence embedding | BERT |
+| Sentence embedding | USE (Universal Sentence Encoder) |
+
+### 🖼️ Features image
+
+| Approche | Méthode |
+|----------|---------|
+| Descripteurs locaux | SIFT / ORB |
+| Deep Learning | CNN Transfer Learning |
+
+---
+
+## 📊 Méthodologie
+
+1. **Prétraitement texte** — nettoyage, tokenisation, lemmatisation
+2. **Prétraitement image** — redimensionnement, normalisation
+3. **Extraction de features** — chaque approche testée indépendamment
+4. **Réduction de dimension** — PCA / t-SNE / UMAP pour visualisation
+5. **Visualisation** — représentation 2D des clusters pour évaluer la séparabilité
+
+---
+
+## 🛠️ Stack
+
+`Python` `Scikit-learn` `Gensim` `Transformers (BERT)` `TensorFlow` `USE` `OpenCV` `NLTK` `Matplotlib` `t-SNE` `UMAP`
+
+---
+
+## 📁 Structure du projet
+
+```
+├── notebooks/
+│   ├── 01_preprocessing_texte.ipynb
+│   ├── 02_preprocessing_image.ipynb
+│   ├── 03_features_texte.ipynb
+│   └── 04_features_image.ipynb
+└── README.md
+```
+
+---
+
+## 📂 Données
+
+Articles e-commerce avec descriptions textuelles et images associées, couvrant plusieurs catégories de produits.
